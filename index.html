@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>業務自動化の開発実績</title>
+<meta name="description" content="GAS・スプレッドシートの自動化、API連携ツール、LP、業務ダッシュボードの開発実績とサンプル。">
+<style>
+:root{--ink:#16202e;--sub:#4a5568;--line:#dde3ec;--bg:#f6f8fb;--card:#fff;--accent:#1f5fd6;--accent2:#0f7a4a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 "Hiragino Sans","Yu Gothic UI","Noto Sans JP",Meiryo,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,#132a4f,#1f5fd6);color:#fff;padding:64px 0 56px}
+header .tag{display:inline-block;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:13px;letter-spacing:.05em}
+h1{font-size:34px;line-height:1.4;margin:14px 0 12px}
+header p{margin:0;max-width:680px;color:#dfe8fb}
+section{padding:56px 0 8px}
+h2{font-size:24px;margin:0 0 6px}
+.lead{color:var(--sub);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card .price{color:var(--accent);font-weight:700;font-size:20px}
+.card ul{margin:10px 0 0;padding-left:20px;color:var(--sub)}
+.work{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px}
+.work img{display:block;width:100%;border-bottom:1px solid var(--line)}
+.work .body{padding:20px 22px}
+.work .body h3{margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips span{background:#eef3fc;color:#1a3a7a;border-radius:14px;padding:2px 10px;font-size:13px}
+.real{border-left:5px solid var(--accent2)}
+.label{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+.label.real-l{background:#e3f4ea;color:#0b5e37}.label.sample{background:#fff1dc;color:#7a4b00}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px 14px 62px;position:relative}
+ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;text-align:center;line-height:30px}
+footer{padding:48px 0 60px;color:var(--sub);font-size:14px}
+.note{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--sub);font-size:14px}
+@media(max-width:600px){h1{font-size:26px}header{padding:44px 0 40px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="tag">業務自動化・AI連携の個人開発</span>
+<h1>毎日の手作業を、<br>動く仕組みに変えます。</h1>
+<p>スプレッドシートの転記・集計、在庫や注文の管理、通知やレポート作成。<br>「人が毎日やっている作業」を、小さく確実に自動化します。やり取りはチャットで完結します。</p>
+</div></header>
+
+<main class="wrap">
+<section>
+<h2>対応できること</h2>
+<p class="lead">金額は目安です。内容をお聞きして、作業範囲と金額を先にお伝えします。</p>
+<div class="grid">
+<div class="card"><h3>GAS・スプレッドシート自動化</h3><div class="price">5,000円〜</div>
+<ul><li>フォーム→シート→通知の連携</li><li>集計・レポートの自動作成</li><li>毎朝の定時処理・メール送信</li></ul></div>
+<div class="card"><h3>API連携・業務ツール</h3><div class="price">30,000円〜</div>
+<ul><li>EC・通販（eBay・Shopify等）の在庫や注文の同期</li><li>Webデータの収集（規約で許可された範囲）</li><li>ChatGPT / Claude を使った文章処理</li></ul></div>
+<div class="card"><h3>LP・業務ダッシュボード</h3><div class="price">15,000円〜</div>
+<ul><li>スマホ対応のLP（予約・問い合わせフォーム付き）</li><li>受注・進捗・在庫の見える化</li><li>公開・設定までサポート</li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>開発実績</h2>
+<p class="lead">実際に作って、運用しているものです。</p>
+<div class="work real"><div class="body">
+<span class="label real-l">運用中</span>
+<h3>eBay輸出の全自動化システム</h3>
+<p>仕入れ先のAPIから商品情報を取得して出品し、在庫と価格を定期的に同期。注文が入ると仕入れ先へ自動で発注し、追跡番号をeBayへ自動で登録するところまでを一つの仕組みにしました。サーバー上で毎日動いています。</p>
+<div class="chips"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>eBay API</span><span>仕入れ先API</span><span>LINE / Discord 通知</span></div>
+</div></div>
+<div class="work real"><div class="body">
+<span class="label real-l">開発実績</span>
+<h3>製造業向けの業務システム</h3>
+<p>中小製造業の現場向けに、人事労務（勤怠・従業員管理）、案件管理、生産の見える化ダッシュボードを開発しました。紙とExcelで管理していた情報を、1つの画面で確認できるようにしています。</p>
+<div class="chips"><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span></div>
+</div></div>
+<div class="work real"><div class="body">
+<span class="label real-l">公開中</span>
+<h3>比較サイトの制作・運用</h3>
+<p>動画配信サービスやウォーターサーバーなどの比較サイトを複数制作し、公開・運用しています。</p>
+<div class="chips"><span>Next.js</span><span>Vercel</span><span>SEO</span></div>
+</div></div>
+</section>
+
+<section>
+<h2>制作サンプル</h2>
+<p class="lead">完成イメージをお伝えするために作った自主制作のサンプルです（掲載のデータはすべて架空です）。</p>
+<div class="work"><img src="gas.png" alt="GASによる受注・在庫の自動化サンプル画面" loading="lazy"><div class="body">
+<span class="label sample">自主制作サンプル</span><h3>受注・在庫の自動化（GAS）</h3>
+<p>Googleフォームの注文を台帳に自動記録し、在庫を自動で減算。在庫が少なくなったらLINEで通知し、毎朝集計メールを送ります。</p></div></div>
+<div class="work"><img src="lp.png" alt="整体院の予約LPサンプル画面" loading="lazy"><div class="body">
+<span class="label sample">自主制作サンプル</span><h3>予約につながるLP</h3>
+<p>悩み別の訴求から、施術の流れ・料金・よくある質問を経て、日時を選ぶだけのWEB予約まで迷わず進める1ページ構成です。</p></div></div>
+<div class="work"><img src="dash.png" alt="町工場向け受注・生産進捗ダッシュボードのサンプル画面" loading="lazy"><div class="body">
+<span class="label sample">自主制作サンプル</span><h3>受注・生産進捗ダッシュボード</h3>
+<p>今月の受注金額、工程ごとの進み具合、納期が近い案件（遅れは赤）、設備の稼働率を1画面で確認できます。</p></div></div>
+</section>
+
+<section>
+<h2>進め方</h2>
+<p class="lead">打ち合わせはチャットのみで完結します。</p>
+<ol class="steps">
+<li><b>今の作業を教えてください</b><br>画面のスクリーンショットや、作業の手順を箇条書きでいただければ十分です。</li>
+<li><b>作業範囲と金額をお伝えします</b><br>「どこまで自動にするか」「できないこと」を最初に明確にします。</li>
+<li><b>完成イメージを確認</b><br>テスト用の環境で動きを見ていただき、修正します。</li>
+<li><b>納品とマニュアル</b><br>画像付きの使い方マニュアルをお付けします。納品後の不具合は無料で修正します。</li>
+</ol>
+</section>
+
+<section>
+<div class="note">開発にはAI支援ツールを活用し、短納期で仕上げています。動作確認と品質確認は、納品前に必ず人が行います。<br>ご依頼・ご相談は、ご覧いただいたサービス（クラウドワークス・ランサーズ・ココナラ）のメッセージからお送りください。</div>
+</section>
+</main>
+<footer><div class="wrap">© 2026 業務自動化の個人開発</div></footer>
+</body>
+</html>
